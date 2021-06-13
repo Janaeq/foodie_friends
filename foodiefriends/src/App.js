@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 // COMPONENTS
-import Welcome from './components/Welcome'
+import Login from './components/Login'
 import Signup from './components/Signup'
 
 // ACTIONS
@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Route path='/' exact render={() => (<Welcome handleSubmit={this.handleLogin} />) } />
+        <Route path='/login' exact render={() => (<Login handleSubmit={this.handleLogin} />) } />
         <Route path='/signup' component={Signup} />
       </div>
     );

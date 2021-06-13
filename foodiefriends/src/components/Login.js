@@ -3,7 +3,7 @@ import '../App.css';
 import { Link } from 'react-router-dom'
 
 
-class Welcome extends Component {
+class Login extends Component {
     state = {
         username: '',
         password: ''
@@ -28,9 +28,9 @@ class Welcome extends Component {
 
     render() {
         return (
-            <div className='welcome'>
+            <div className='login'>
                 <div className='Carousel'></div>
-                <div className='main-card login'>
+                <div className='main-card'>
                     <h1>Foodie Friends</h1>
                     <div className='login-form'>
                         <form onSubmit={this.onSubmit}>
@@ -40,7 +40,7 @@ class Welcome extends Component {
                         </form>
                     </div>
                 </div>
-                <div className='secondary-card signup'>
+                <div className='secondary-card'>
                     Don't have an account? <Link to="/signup">Sign up</Link>
                 </div>
             </div>
@@ -48,4 +48,4 @@ class Welcome extends Component {
     }
 }
 
-export default Welcome
+export default Login
