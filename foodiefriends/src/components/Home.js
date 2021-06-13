@@ -8,7 +8,7 @@ class Home extends Component {
         return (
             <div className='home'>
                 <div className='Carousel'></div>
-                <div className='login-card'>
+                <div className='main-card login'>
                     <h1>Foodie Friends</h1>
                     <div className='login-form'>
                         <form>
@@ -18,10 +18,8 @@ class Home extends Component {
                         </form>
                     </div>
                 </div>
-                <div className='signup-card'>
-                    <Link to='/signup'>
-                        <button className='signup-btn'>Sign Up</button>
-                    </Link>
+                <div className='secondary-card signup'>
+                    Don't have an account? <Link to="/signup">Sign up</Link>
                 </div>
             </div>
         )
