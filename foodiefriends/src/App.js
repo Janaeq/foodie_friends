@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 // COMPONENTS
+import LandingPage from './components/Landingpage'
 import Login from './components/Login'
 import Signup from './components/Signup'
 
@@ -18,7 +19,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Route path='/login' exact render={() => (<Login handleSubmit={this.handleLogin} />) } />
+        <Route path='/' exact component={LandingPage} />
+        <Route path='/login' render={() => (<Login handleSubmit={this.handleLogin} />) } />
         <Route path='/signup' component={Signup} />
       </div>
     );
