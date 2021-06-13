@@ -1,18 +1,33 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './App.css';
-
-import Home from './components/Home'
-import Signup from './components/Signup'
 import { Route } from 'react-router-dom'
+import { connect } from 'react-redux'
 
+// COMPONENTS
+import Welcome from './components/Welcome'
+import Signup from './components/Signup'
 
-function App() {
-  return (
-    <div>
-      <Route path='/' exact component={Home} />
-      <Route path='/signup' component={Signup} />
-    </div>
-  );
+// ACTIONS
+import { fetchLogin } from './actions/loggedAction'
+
+class App extends Component {
+  handleLogin = (user) => {
+    this.props.fetchLogin(user)
+  }
+
+  render() {
+    return (
+      <div>
+        <Route path='/' exact render={() => (<Welcome handleSubmit={this.handleLogin} />) } />
+        <Route path='/signup' component={Signup} />
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => ({ user: state.user })
+
+export default connect(mapStateToProps, {
+  // DISPATCH ACTIONS
+  fetchLogin
+})(App)
