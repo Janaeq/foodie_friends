@@ -1,12 +1,14 @@
 import React, {Component} from 'react'
 import Nav from '../components/Nav'
-
+import TimelinePosts from '../components/TimelinePosts'
 class Home extends Component {
     render() {
         console.log(this.props)
         return (
-            <Nav />
-            // <Timeline />
+            <div>
+                <Nav />,
+                <TimelinePosts />
+            </div>
         )
     }
 }
