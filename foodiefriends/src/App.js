@@ -31,28 +31,37 @@ class App extends Component {
 
     return (
       <div>
-        <Route path='/' exact component={LandingPage} />
-        <Route
-          path='/login'
-          render={() =>
-            user && token ? (
-              <Redirect to='/home' />
-            ) : (
-              <Login handleSubmit={this.handleLogin} />
-            )
-          }
-        />
-        <Route 
-          path='/signup'
-          render={() =>
-            user && token ? (
-              <Redirect to='/home' />
-            ) : (
-              <Signup handleSubmit={this.handleSignup} />
-            )
-          }
-        />
-        <Route path='/home' component={Home} />
+          <Route 
+            exact path='/' 
+            render={(routerProps) => 
+              user && token ? (
+                <Redirect to='/home' />
+              ) : (
+                <LandingPage {...routerProps}/>
+              )
+            }
+          />
+          <Route
+            path='/login'
+            render={() =>
+              user && token ? (
+                <Redirect to='/home' />
+              ) : (
+                <Login handleSubmit={this.handleLogin} />
+              )
+            }
+          />
+          <Route 
+            path='/signup'
+            render={() =>
+              user && token ? (
+                <Redirect to='/home' />
+              ) : (
+                <Signup handleSubmit={this.handleSignup} />
+              )
+            }
+          />
+          <Route path='/home' component={Home} />
       </div>
     )
   }
