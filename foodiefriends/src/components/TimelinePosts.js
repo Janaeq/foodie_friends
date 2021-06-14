@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 class TimelinePosts extends Component {
 
     render() {
-        console.log(this.props.posts)
         const posts = this.props.posts.map(post => (
             <div key={post.id} className='post-card'>
                 <div className='post-header'>
