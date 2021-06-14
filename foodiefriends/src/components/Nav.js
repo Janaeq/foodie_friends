@@ -9,6 +9,7 @@ const Nav = () => {
             </div>
             <div className='nav-links'>
                 <ul>
+                    <li>Add Post</li>
                     <li>Home</li>
                     <li>Notifications</li>
                     <li>Profile</li>
