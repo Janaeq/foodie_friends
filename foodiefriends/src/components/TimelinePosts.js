@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class TimelinePosts extends Component {
     state = {
-        posts: []
+        allPosts: []
     }
 
     render() {
