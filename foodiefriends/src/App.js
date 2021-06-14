@@ -72,7 +72,16 @@ class App extends Component {
               )
             }
           />
-          <Route path='/profile' component={Profile} />
+          <Route 
+            path='/profile'
+            render={() =>
+              !user || !token ? (
+                <Redirect to='/' />
+              ) : (
+                <Profile user={user} />
+              )
+            }
+          />
       </div>
     )
   }
