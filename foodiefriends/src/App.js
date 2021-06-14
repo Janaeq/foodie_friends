@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import LandingPage from './components/Landingpage'
 import Login from './components/Login'
 import Signup from './components/Signup'
-import Home from './components/Home'
+import Home from './containers/Home'
 
 // ACTIONS
 import { signupAction, loginAction, autologin } from './actions/loggedAction'
@@ -61,7 +61,16 @@ class App extends Component {
               )
             }
           />
-          <Route path='/home' component={Home} />
+          <Route
+            path='/home'
+            render={() =>
+              !user || !token ? (
+                <Redirect to='/' />
+              ) : (
+                <Home user={user} />
+              )
+            }
+          />
       </div>
     )
   }
