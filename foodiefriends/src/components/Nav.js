@@ -7,11 +7,11 @@ const Nav = () => {
             <div className='logo'>
                 <h3>Foodie Friends</h3>
             </div>
+            <div className='searchbar'>Searchbar - to search for recipes made by other users </div>
             <div className='nav-links'>
                 <ul>
-                    <li>Add Post</li>
                     <li>Home</li>
-                    <li>Notifications</li>
+                    <li>Add Post</li>
                     <li>Profile</li>
                 </ul>
             </div>
