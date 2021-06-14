@@ -70,6 +70,25 @@ export const autologin = () => {
   }
 }
 
+export const getProfile = () => {
+  return dispatch => {
+    dispatch({ type: 'LOGGIN_USER' })
+    const token = localStorage.token
+    if (token) {
+      return fetch('http://localhost:3000/api/v1/profile', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      .then(r => r.json())
+      .then(data => console.log(data))
+    }
+  }
+}
+
 // adds fetched user to the state - currentUser: {id, username}
 export const LOGIN_USER = user => ({
   type: 'LOGIN_USER',
