@@ -8,3 +8,5 @@ const timelineReducer = (state = { posts: [], post: {} }, action) => {
             return state
     }
 }
+
+export default timelineReducer
