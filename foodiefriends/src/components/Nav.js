@@ -1,7 +1,11 @@
 import React from 'react' 
 import '../App.css'
+import { Link } from 'react-router-dom'
 
 const Nav = () => {
+    const navStyle = {
+        color: 'white'
+    }
     return (
         <nav>
             <div className='logo'>
@@ -9,10 +13,16 @@ const Nav = () => {
             </div>
             <div className='searchbar'>Searchbar - to search for recipes made by other users </div>
             <div className='nav-links'>
-                <ul>
-                    <li>Home</li>
-                    <li>Add Post</li>
-                    <li>Profile</li>
+                <ul className='nav-links'>
+                    <Link to='/home' style={navStyle}>
+                        <li>Home</li>
+                    </Link>
+                    <Link style={navStyle}>
+                        <li>Add Post</li>
+                    </Link>
+                    <Link to='/profile' style={navStyle}>
+                        <li>Profile</li>
+                    </Link>
                 </ul>
             </div>
         </nav>
