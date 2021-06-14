@@ -1,12 +1,13 @@
-// user not logged in is default
-const loggedReducer = (state = false, action) => {
-    switch(action.type) {
-        // when user signs in successfully, state will change to true (or signed in)
-        case 'SIGN_IN':
-            return !state
-        default:
-            return state
-    }
+const loggedReducer = (state = { currentUser: [] }, action) => {
+  switch (action.type) {
+    case 'LOGIN_USER':
+      // return the currect state with the new data added 
+      return { ...state, currentUser: action.payload }
+    case 'LOGGING_USER':
+      return { ...state }
+    default:
+      return state
+  }
 }
 
 export default loggedReducer

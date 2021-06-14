@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import '../App.css';
 import { Link } from 'react-router-dom'
 
-
 class Signup extends Component {
     state = {
         username: '',
@@ -17,12 +16,7 @@ class Signup extends Component {
 
     onSubmit = e => {
         e.preventDefault()
-        
-        const user = {
-            username: this.state.username,
-            password: this.state.password
-        }
-        this.props.handleSubmit(user)
+        this.props.handleSubmit(this.state)
     }
 
     render() {
@@ -39,7 +33,7 @@ class Signup extends Component {
                     </div>
                 </div>
                 <div className='secondary-card login'>
-                    Have an account? <Link to="/">Log in</Link>
+                    Have an account? <Link to="/login">Log in</Link>
                 </div>
             </div>
         )
