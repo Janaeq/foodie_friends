@@ -7,8 +7,7 @@ class TimelinePosts extends Component {
         this.props.fetchPosts()
     }
 
-    render() {  
-        console.log(this.props.posts)
+    render() {
         const postItems = this.props.posts.map(post => (
             <div key={post.id}>
                 <div className='post-header'>
