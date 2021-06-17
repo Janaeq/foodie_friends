@@ -72,7 +72,7 @@ export const autologin = () => {
 
 export const getProfile = () => {
   return dispatch => {
-    dispatch({ type: 'LOGGIN_USER' })
+    dispatch({ type: 'LOGGING_USER' })
     const token = localStorage.token
     if (token) {
       return fetch('http://localhost:3000/api/v1/profile', {
@@ -88,6 +88,7 @@ export const getProfile = () => {
     }
   }
 }
+// 
 
 // adds fetched user to the state - currentUser: {id, username}
 export const LOGIN_USER = user => ({
