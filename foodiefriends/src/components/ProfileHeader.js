@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class ProfileHeader extends Component {
     render() {
@@ -8,7 +9,9 @@ class ProfileHeader extends Component {
                 <div className='user-id'>
                     <img src={user.img} />
                     <p>{user.username}</p>
+                    <Link to='/edit_profile'>
                     <button className='edit-profile'>Edit Profile</button>
+                    </Link>
                 </div>
                 <div className='bio'>
                     <p>{user.first_name} {user.last_name}</p>
@@ -26,4 +29,4 @@ class ProfileHeader extends Component {
     }
 }
 
-export default ProfileHeader 
+export default ProfileHeader

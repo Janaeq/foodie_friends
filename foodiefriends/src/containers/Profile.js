@@ -1,17 +1,12 @@
 import React, {Component} from 'react'
-import { connect } from 'react-redux'
-import { getProfile } from '../actions/loggedAction'
 import Nav from '../components/Nav'
 import ProfileHeader from '../components/ProfileHeader'
 import ProfileGrid from './ProfileGrid'
 
 class Profile extends Component {
-    componentDidMount() {
-        this.props.getProfile()
-    }
 
     render() {
-        const user = this.props.user.currentUser
+        const user = this.props.user
         return (
             <div>
                 <Nav />
@@ -22,4 +17,4 @@ class Profile extends Component {
     }
 }
 
-export default connect(null, { getProfile })(Profile)
+export default Profile

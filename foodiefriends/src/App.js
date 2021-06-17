@@ -32,6 +32,7 @@ class App extends Component {
 
     return (
       <div>
+        <Switch>
           <Route 
             exact path='/' 
             render={(routerProps) => 
@@ -68,7 +69,7 @@ class App extends Component {
               !user || !token ? (
                 <Redirect to='/' />
               ) : (
-                <Home user={user} />
+                <Home />
               )
             }
           />
@@ -82,6 +83,7 @@ class App extends Component {
               )
             }
           />
+        </Switch>
       </div>
     )
   }
@@ -89,7 +91,7 @@ class App extends Component {
 
 
 const mapStateToProps = state => ({
-  user: state.user
+  user: state.user.currentUser
 })
 
 export default connect(mapStateToProps, {
