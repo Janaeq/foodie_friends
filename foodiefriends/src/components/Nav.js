@@ -17,7 +17,7 @@ const Nav = () => {
                     <Link to='/home' style={navStyle}>
                         <li>Home</li>
                     </Link>
-                    <Link style={navStyle}>
+                    <Link style={navStyle} to="#">
                         <li>Add Post</li>
                     </Link>
                     <Link to='/profile' style={navStyle}>

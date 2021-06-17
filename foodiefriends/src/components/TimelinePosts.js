@@ -1,32 +1,64 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { fetchPosts } from '../actions/timelineAction'
 
 class TimelinePosts extends Component {
+    componentDidMount() {
+        this.props.fetchPosts()
+    }
 
-    render() {
-        const posts = this.props.posts.map(post => (
-            <div key={post.id} className='post-card'>
+    render() {  
+        console.log(this.props.posts)
+        const postItems = this.props.posts.map(post => (
+            <div key={post.id}>
                 <div className='post-header'>
-                    {/* where is the user profile pic? */}
-                    <h4>{post.name}</h4>
-                    <p>by - {post.user.username}</p>
+                    <div className='user-img'>
+                        {/* post.user.img */}
+                    </div>
+                    <div className='post-user'>
+                        {post.user.username}
+                    </div>
+                    <div className='post-options'>
+                        {/* new component */}
+                    </div>
                 </div>
                 <div className='post-img'>
-                    <p>{post.img}</p>
+                    {post.img}
                 </div>
-                <div className='actions'>
-                    <button className='like'>Like</button>
-                    <button className='ingredients'>Ingredients</button>
-                    <button className='directions'>Directions</button>
-                    <p>ingredients or directions</p> {/* implement toggler here */}
+                <div className='user-interaction'>
+                    <div className='like'>
+                        {/* like component */}
+                    </div>
+                    <div className='toggler'>
+                        {/* toggler component */}
+                    </div>
+                </div>
+                <div className='post-title'>
+                    {post.name}
+                </div>
+                <div className='ingredient-direction'>
+                    <div className='ingredient'>
+                        {post.ingredients}
+                    </div>
+                    <div className='directions'>
+                        {post.directions}
+                    </div>
                 </div>
             </div>
         ))
         return (
             <div>
-                { posts }
+                {postItems}
             </div>
         )
     }
 }
 
-export default TimelinePosts
+const mapStateToProps = state => {
+    return {
+        posts: state.posts.items,
+        newPost: state.posts.item
+    }
+}
+
+export default connect(mapStateToProps, { fetchPosts })(TimelinePosts)
