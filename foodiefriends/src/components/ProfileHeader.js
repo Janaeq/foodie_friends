@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
+import UserPosts from './UserPosts'
 
 class ProfileHeader extends Component {
     render() {
+        const user = this.props.user
         return (
             <div className='header'>
                 <div className='user-id'>
                     <p>User pfp</p>
-                    <p>User username</p>
+                    <p>{user.username}</p>
                     <p>link to edit user profile</p>
                 </div>
                 <div className='bio'>
-                    <p>User name</p>
+                    <p>{user.username}</p>
                     <p>User bio</p>
                 </div>
                 <div className='stats'>

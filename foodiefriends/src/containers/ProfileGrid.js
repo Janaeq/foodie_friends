@@ -6,7 +6,7 @@ class ProfileGrid extends Component {
     render() {
         return (
             <div>
-                <UserPosts />,
+                <UserPosts />
                 <LikedPosts />
             </div>
         )

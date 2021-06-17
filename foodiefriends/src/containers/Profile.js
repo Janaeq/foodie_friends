@@ -11,12 +11,12 @@ class Profile extends Component {
     }
 
     render() {
-        console.log(this.props)
+        const user = this.props.user.currentUser
         return (
             <div>
-                <Nav />,
-                <ProfileHeader />
-                <ProfileGrid />
+                <Nav />
+                <ProfileHeader user={user}/>
+                <ProfileGrid user={user}/>
             </div>
         )
     }
