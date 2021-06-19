@@ -5,11 +5,7 @@ import { Link } from 'react-router-dom'
 class Signup extends Component {
     state = {
         username: '',
-        password: '',
-        img: '',
-        first_name: '',
-        last_name: '',
-        bio: ''
+        password: ''
     }
 
     onChange = e => {
