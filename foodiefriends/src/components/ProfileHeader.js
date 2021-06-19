@@ -7,7 +7,7 @@ class ProfileHeader extends Component {
         return (
             <div className='header'>
                 <div className='user-id'>
-                    <img src={user.img} />
+                    <img src={user.img} alt='user' />
                     <p>{user.username}</p>
                     <Link to='/edit_profile'>
                     <button className='edit-profile'>Edit Profile</button>
