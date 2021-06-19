@@ -1,14 +1,15 @@
 import React, { Component } from 'react' 
 
 class UserPosts extends Component {
-    state = {
-        posts: []
-    }
-
     render() {
+        const userPosts = this.props.user.posts.map(post => (
+            <div key={post.id} className='grid-img'>
+                <p>{post.img}</p>
+            </div>
+        ))
         return (
             <div className='user-posts'>
-                <p>on initial display and on grid btn click display user posts</p>
+                {userPosts}
             </div>
         )
     }
