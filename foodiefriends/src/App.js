@@ -9,7 +9,6 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import Home from './containers/Home'
 import Profile from './containers/Profile'
-import EditProfile from './components/EditProfile'
 
 // ACTIONS
 import { signupAction, loginAction, autologin } from './actions/loggedAction'
@@ -81,16 +80,6 @@ class App extends Component {
                 <Redirect to='/' />
               ) : (
                 <Profile user={user} />
-              )
-            }
-          />
-          <Route 
-            path='/edit_profile'
-            render={() =>
-              !user || !token ? (
-                <Redirect to='/' />
-              ) : (
-                <EditProfile user={user} />
               )
             }
           />
