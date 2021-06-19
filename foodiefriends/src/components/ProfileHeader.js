@@ -20,10 +20,6 @@ class ProfileHeader extends Component {
                 <div className='stats'>
                     <p>{user.posts.length} posts</p>
                 </div>
-                <div className='grid-display-toggler'>
-                    <button className='profile-grid'>Grid</button>
-                    <button className='liked-posts'>Liked Posts</button>
-                </div>
             </div>
         )
     }
