@@ -19,9 +19,13 @@ class TimelinePosts extends Component {
                         {/* new component */}
                     </div>
                 </div>
-                <div className='post-img'>
-                    {post.img}
-                </div>
+                <img 
+                    src={post.img} 
+                    style={{
+                        height: "514px",
+                        width: "411px"
+                    }}
+                />
                 <div className='user-interaction'>
                     <div className='like'>
                         {/* like component */}

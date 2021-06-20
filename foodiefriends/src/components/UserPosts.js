@@ -1,14 +1,19 @@
 import React, { Component } from 'react' 
+import IngredientDirectionToggler from './IngredientDirectionToggler'
 
 class UserPosts extends Component {
     render() {
-        console.log(this.props.user.posts[0])
+
         const userPosts = this.props.user.posts.map(post => (
             <div key={post.id} className='grid-img' onClick={this.onClick} >
-                <p>{post.name}</p>
-                <p>{post.img}</p>
-                <p>{post.directions}</p>
-                <p>{post.ingredients}</p>
+                <img 
+                    src={post.img} 
+                    style={{
+                        height: "514px",
+                        width: "411px"
+                    }}
+                />
+                <IngredientDirectionToggler post={post}/>
             </div>
         ))
         return (

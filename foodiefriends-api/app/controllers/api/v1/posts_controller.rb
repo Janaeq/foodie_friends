@@ -7,11 +7,12 @@ class Api::V1::PostsController < ApplicationController
     end
 
     def create
-        post = Post.create(post_params)
-        if post
-            render json: post
+        post = current_user.posts.build(post_params)
+        if post.save
+            byebug
+            render json: { pin: PostSerializer.new(post) }, status: :created
         else
-            render json: {error: post.errors.full_messages.to_sentence}
+            render json: { error: "Failed to create post." }, status: :not_acceptable
         end
     end
 
@@ -28,5 +29,11 @@ class Api::V1::PostsController < ApplicationController
         post = Post.find_by(id: params[:id])
         post.delete
         render json: { message: 'Successfully Deleted' }
+    end
+
+    private
+
+    def post_params
+        params.require(:post).permit(:img, :name, :directions, :ingredients)
     end
 end
