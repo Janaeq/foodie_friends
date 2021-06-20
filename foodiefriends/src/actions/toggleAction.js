@@ -1,13 +1,3 @@
-export const renderPosts = btn => dispatch => {
-    if ( btn.value === 'false' ) {
-        if (btn.name === 'liked-posts') {
-            dispatch({ type: 'LIKED_POSTS', payload: !!btn.value })
-        } else if (btn.name === 'user-posts') {
-            dispatch({ type: 'USER_POSTS', payload: !!btn.value })
-        }
-    } 
-}
-
 export const displayContent = btn => dispatch => {
     if (btn.value === 'false') {
         if (btn.name === 'directions') { 

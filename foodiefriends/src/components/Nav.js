@@ -1,19 +1,23 @@
 import React from 'react' 
 import '../App.css'
 import { Link } from 'react-router-dom'
-import Searchbar from './Searchbar'
 
 const Nav = () => {
     const navStyle = {
         color: 'white'
     }
+    
+    const handleLogout= () => {
+        localStorage.removeItem('token')
+    }
+
     return (
         <nav>
             <div className='logo'>
                 <h3>Foodie Friends</h3>
             </div>
-            <div className='searchbar'>
-                <Searchbar />
+            <div>
+                <p>Share your favorite recipies!</p>
             </div>
             <div className='nav-links'>
                 <ul className='nav-links'>
@@ -25,6 +29,9 @@ const Nav = () => {
                     </Link>
                     <Link to='/profile' style={navStyle}>
                         <li>Profile</li>
+                    </Link>
+                    <Link to='/' style={navStyle} onClick={handleLogout}>
+                        <li>Log Out</li>
                     </Link>
                 </ul>
             </div>

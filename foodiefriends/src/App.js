@@ -30,7 +30,6 @@ class App extends Component {
   render() {
     const user = this.props.user
     const token = localStorage.token
-
     return (
       <div>
         <Switch>
@@ -70,7 +69,7 @@ class App extends Component {
               !user || !token ? (
                 <Redirect to='/' />
               ) : (
-                <Home />
+                <Home handleLogout={this.handleLogout} />
               )
             }
           />
@@ -80,7 +79,7 @@ class App extends Component {
               !user || !token ? (
                 <Redirect to='/' />
               ) : (
-                <Profile user={user} />
+                <Profile user={user} handleLogout={this.handleLogout} />
               )
             }
           />
