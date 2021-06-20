@@ -33,8 +33,8 @@ class ProfileGrid extends Component {
 
 const mapStateToProps = state => {
     return {
-        userPosts: state.toggler.userPostsClicked,
-        likedPosts: state.toggler.likedPostsClicked
+        userPosts: state.gridToggler.userPostsClicked,
+        likedPosts: state.gridToggler.likedPostsClicked
     }
 }
 

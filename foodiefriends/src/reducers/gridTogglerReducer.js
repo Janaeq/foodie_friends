@@ -1,4 +1,4 @@
-const toggleReducer = (state = { userPostsClicked: true, likedPostsClicked: false }, action) => {
+const gridTogglerReducer = (state = { userPostsClicked: true, likedPostsClicked: false }, action) => {
     switch(action.type) {
         case 'USER_POSTS':
             return { ...state, userPostsClicked: action.payload, likedPostsClicked: !action.payload }
@@ -9,4 +9,4 @@ const toggleReducer = (state = { userPostsClicked: true, likedPostsClicked: fals
     }
 }
 
-export default toggleReducer
+export default gridTogglerReducer
