@@ -23,7 +23,6 @@ class Login extends Component {
     render() {
         return (
             <div className='login'>
-                <div className='Carousel'></div>
                 <div className='main-card'>
                     <h1>Foodie Friends</h1>
                     <div className='login-form'>
@@ -34,6 +33,7 @@ class Login extends Component {
                         </form>
                     </div>
                 </div>
+                <br></br>
                 <div className='secondary-card'>
                     Don't have an account? <Link to="/signup">Sign up</Link>
                 </div>

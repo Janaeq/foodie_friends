@@ -10,15 +10,7 @@ class TimelinePosts extends Component {
 
     render() {
         const postItems = this.props.posts.map(post => (
-            <div key={post.id}>
-                <div className='post-header'>
-                    <div className='post-user'>
-                        {post.user.username}
-                    </div>
-                    <div className='post-options'>
-                        {/* new component */}
-                    </div>
-                </div>
+            <div key={post.id} className='timeline-posts'>
                 <img 
                     src={post.img} 
                     style={{

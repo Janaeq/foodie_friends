@@ -32,6 +32,7 @@ class Signup extends Component {
                         </form>
                     </div>
                 </div>
+                <br/>
                 <div className='secondary-card login'>
                     Have an account? <Link to="/login">Log in</Link>
                 </div>
