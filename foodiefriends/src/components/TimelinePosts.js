@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchPosts } from '../actions/timelineAction'
+import IngredientDirectionToggler from './IngredientDirectionToggler'
 
 class TimelinePosts extends Component {
     componentDidMount() {
@@ -11,9 +12,6 @@ class TimelinePosts extends Component {
         const postItems = this.props.posts.map(post => (
             <div key={post.id}>
                 <div className='post-header'>
-                    <div className='user-img'>
-                        {/* post.user.img */}
-                    </div>
                     <div className='post-user'>
                         {post.user.username}
                     </div>
@@ -28,20 +26,9 @@ class TimelinePosts extends Component {
                     <div className='like'>
                         {/* like component */}
                     </div>
-                    <div className='toggler'>
-                        {/* toggler component */}
-                    </div>
                 </div>
-                <div className='post-title'>
-                    {post.name}
-                </div>
-                <div className='ingredient-direction'>
-                    <div className='ingredient'>
-                        {post.ingredients}
-                    </div>
-                    <div className='directions'>
-                        {post.directions}
-                    </div>
+                <div className='ingredient-direction-toggler'>
+                    <IngredientDirectionToggler post={post}/>
                 </div>
             </div>
         ))
