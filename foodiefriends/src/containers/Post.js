@@ -16,7 +16,7 @@ class Post extends Component {
             <div>
                 <Nav />
                 <div className='show-post'>
-                    <h1>{post.name} </h1><p>by {post.user.username}</p>
+                    <h1>{post.name} </h1><p>by </p>
                     <div className='container'>
                         <div className='row'>
                             <div className='column'>

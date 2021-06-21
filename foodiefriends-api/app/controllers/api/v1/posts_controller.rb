@@ -9,7 +9,6 @@ class Api::V1::PostsController < ApplicationController
     def create
         post = current_user.posts.build(post_params)
         if post.save
-            byebug
             render json: { pin: PostSerializer.new(post) }, status: :created
         else
             render json: { error: "Failed to create post." }, status: :not_acceptable

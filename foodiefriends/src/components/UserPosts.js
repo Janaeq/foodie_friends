@@ -1,24 +1,27 @@
 import React, { Component } from 'react' 
-import IngredientDirectionToggler from './IngredientDirectionToggler'
+import { Link } from 'react-router-dom'
 
 class UserPosts extends Component {
     render() {
 
         const userPosts = this.props.user.posts.map(post => (
             <div key={post.id} className='grid-img' onClick={this.onClick} >
-                <img 
-                    src={post.img} 
-                    style={{
-                        height: "514px",
-                        width: "411px"
-                    }}
-                />
-                <IngredientDirectionToggler post={post}/>
+                <Link to={{pathname: `/posts/${post.id}`}}>
+                    <img
+                        src={post.img} 
+                        style={{
+                            height: "300px",
+                            width: "225px"
+                        }}
+                    />
+                </Link>
             </div>
         ))
         return (
             <div className='user-posts'>
-                {userPosts}
+                <div className='grid'>
+                    {userPosts}
+                </div>
             </div>
         )
     }

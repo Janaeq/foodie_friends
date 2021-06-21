@@ -5,16 +5,10 @@ import { createPost } from '../actions/timelineAction'
 
 class NewPost extends Component {
     state = {
-        img: null,
+        img: '',
         name: '',
         directions: '',
         ingredients: ''
-    }
-
-    onImgChange = e => {
-        this.setState({
-            img: URL.createObjectURL(e.target.files[0])
-        })
     }
 
     onSubmit = e => {
@@ -32,18 +26,12 @@ class NewPost extends Component {
         return(
             <div>
                 <Nav />
-                <div className='new-post'>
+                <div className='show-post'>
                     <h1>New Post</h1>
+                    <div className='container'>
                     <form onSubmit={this.onSubmit}>
                         <label>Upload Image: </label>
-                        <input type='file' accept="image/*" multiple={false} onChange={this.onImgChange} name='photo'/>
-                        <img 
-                            src={this.state.img} 
-                            style={{
-                                height: "90px",
-                                width: "70px"
-                            }}
-                        /><br/><br/>
+                        <input type='text' name='img' onChange={this.onChange} value={this.state.img} /><br/>
                         <label>Name: </label>
                         <input type='text' name='name' onChange={this.onChange} value={this.state.name} /><br/>
                         <label>Directions: </label>
@@ -53,6 +41,7 @@ class NewPost extends Component {
                         <button type='submit'>Post!</button>
                         <br/>
                     </form>
+                    </div>
                 </div>
             </div>
         )
