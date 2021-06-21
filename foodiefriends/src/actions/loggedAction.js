@@ -13,7 +13,7 @@ export const signupAction = user => {
     .then(r => r.json())
     .then(signupData => { // signupData = username and token
       if (signupData.error) {
-        console.log(signupData.error)
+        alert(signupData.error)
       } else {
         localStorage.setItem('token', signupData.jwt)
         dispatch(LOGIN_USER(signupData.user))
@@ -36,7 +36,7 @@ export const loginAction = user => {
     .then(r => r.json())
     .then(loginData => {
       if (loginData.error) {
-        console.log(loginData.error)
+        alert(loginData.error)
       } else {
         localStorage.setItem('token', loginData.jwt)
         dispatch(LOGIN_USER(loginData.user)) //loginData.user is a hash containing id and username

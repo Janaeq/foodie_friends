@@ -20,10 +20,14 @@ export const createPost = (postData, history) => dispatch => {
         body: JSON.stringify(postData)
     })
     .then(r => r.json())
-    .then(post => dispatch({ 
-        type: 'NEW_POST', 
-        payload: post 
-    }), history.push('/'))
+    .then(post => {
+        if (post.error) {
+            alert(post.error)
+        } else {
+            dispatch(NEW_POST(post.post))
+        }
+        history.push('/')
+    })
 }
 
 export const fetchPost = (extension) => dispatch => {
@@ -36,3 +40,8 @@ export const fetchPost = (extension) => dispatch => {
         payload: post
     }))
 }
+
+export const NEW_POST = post => ({
+    type: 'NEW_POST',
+    payload: post
+})
