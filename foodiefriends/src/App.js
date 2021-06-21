@@ -10,6 +10,7 @@ import Signup from './components/Signup'
 import Home from './containers/Home'
 import Profile from './containers/Profile'
 import NewPost from './components/NewPost';
+import Post from './containers/Post'
 
 // ACTIONS
 import { signupAction, loginAction, autologin } from './actions/loggedAction'
@@ -90,6 +91,16 @@ class App extends Component {
                 <Redirect to='/' />
               ) : (
                 <NewPost user={user} {...routerProps} />
+              )
+            }
+          />
+          <Route 
+            path='/posts/:id'
+            render={(routerProps) =>
+              !user || !token ? (
+                <Redirect to='/' />
+              ) : (
+                <Post user={user} {...routerProps}/>
               )
             }
           />

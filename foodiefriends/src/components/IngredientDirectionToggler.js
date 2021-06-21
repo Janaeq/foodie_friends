@@ -21,11 +21,10 @@ class IngredientDirectionToggler extends Component {
         const post = this.props.post
         return (
             <div className='ingredient-direction-toggler'>
-                <h3>{post.name}</h3>
-                <p>by {post.user.username}</p>
-                <button className='ingredients-btn' name='ingredients' value={this.props.ingredients} onClick={this.onClick}>Ingredients</button>
-                <button className='directions-btn' name='directions' value={this.props.directions} onClick={this.onClick}>Directions</button>
-                <button className='hide' name='hide' value={this.props.hide} onClick={this.onClick}>Hide</button>
+                <div className='toggler-btn'>
+                    <button className='ingredients-btn' name='ingredients' value={this.props.ingredients} onClick={this.onClick}>Ingredients</button>
+                    <button className='directions-btn' name='directions' value={this.props.directions} onClick={this.onClick}>Directions</button>
+                </div>
                 {this.renderContent()}
             </div>
         )

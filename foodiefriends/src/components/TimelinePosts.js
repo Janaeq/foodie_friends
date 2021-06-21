@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchPosts } from '../actions/timelineAction'
-import IngredientDirectionToggler from './IngredientDirectionToggler'
+import { Link } from 'react-router-dom'
 
 class TimelinePosts extends Component {
     componentDidMount() {
@@ -11,6 +11,7 @@ class TimelinePosts extends Component {
     render() {
         const postItems = this.props.posts.map(post => (
             <div key={post.id} className='timeline-posts'>
+                <Link to={{pathname: `/posts/${post.id}`}}>
                 <img 
                     src={post.img} 
                     style={{
@@ -18,13 +19,10 @@ class TimelinePosts extends Component {
                         width: "411px"
                     }}
                 />
-                <div className='user-interaction'>
-                    <div className='like'>
-                        {/* like component */}
-                    </div>
-                </div>
+                </Link>
                 <div className='ingredient-direction-toggler'>
-                    <IngredientDirectionToggler post={post}/>
+                    <h3>{post.name}</h3>
+                    <p>by {post.user.username}</p>
                 </div>
             </div>
         ))

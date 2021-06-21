@@ -25,3 +25,14 @@ export const createPost = (postData, history) => dispatch => {
         payload: post 
     }), history.push('/'))
 }
+
+export const fetchPost = (extension) => dispatch => {
+    const ext = extension.split('/')[2]
+    const url = 'http://localhost:3000/api/v1/posts/' + ext
+    fetch(url)
+    .then(r => r.json())
+    .then(post => dispatch({
+        type: 'FETCH_POSTS',
+        payload: post
+    }))
+}

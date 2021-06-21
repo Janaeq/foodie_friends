@@ -14,10 +14,10 @@ const Nav = () => {
     return (
         <nav>
             <div className='logo'>
-                <h3>Foodie Friends</h3>
-            </div>
-            <div>
-                <p>Share your favorite recipies!</p>
+                <h3>Foodie Friends!</h3>
+                <div className='sublogo'>
+                    <h5>Share your favorite recipies</h5>
+                </div>
             </div>
             <div className='nav-links'>
                 <ul className='nav-links'>

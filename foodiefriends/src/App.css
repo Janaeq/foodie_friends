@@ -7,7 +7,7 @@ nav{
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: rgb(42, 72, 80);
+  background: rgb(241, 148, 86);
   color: white
 }
 
@@ -25,9 +25,32 @@ nav{
 	box-sizing: border-box;
 }
 
-.timeline-posts {
+.landing-page {
 	background: #f6f5f7;
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	margin: -20px 0 50px;
+}
+
+.show-post {
+	background: #f6f5f7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	height: 85vh;
+	margin-top: 0px;
+}
+
+.timeline-posts{
+	background: #f6f5f7;
+	display: flex;
+	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
@@ -54,8 +77,6 @@ p {
   text-align: center;
 }
 
-
-
 span {
 	font-size: 12px;
 }
@@ -69,8 +90,8 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
+	border: 1px solid #fb8570;
+	background-color: #fb8570;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -92,6 +113,14 @@ button:active {
 	transform: scale(0.95);
 }
 
+.logo {
+	display: flex;
+}
+
+.sublogo {
+	margin-left: 10px;
+}
+
 button:focus {
 	outline: none;
 }
@@ -110,6 +139,7 @@ form {
 	padding: 0 50px;
 	height: 100%;
 	text-align: center;
+  padding-bottom: 10px;
 }
 
 .secondary-card {
@@ -140,11 +170,45 @@ input {
 			0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
 	overflow: hidden;
-	width: 768px;
+	width: 840px;
 	max-width: 100%;
 	min-height: 480px;
+	flex-direction: column;
 }
 
+.ingredients-btn {
+	margin-right: 20px;
+	margin-left: 10px;
+}
+
+.toggler-btn {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.login, .signup-page {
+  background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 50px;
+	height: 100%;
+	text-align: center;
+}
+
+.column {
+	float: left;
+	width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  
 .form-container {
 	position: absolute;
 	top: 0;
