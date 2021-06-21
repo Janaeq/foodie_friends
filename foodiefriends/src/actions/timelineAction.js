@@ -32,7 +32,7 @@ export const fetchPost = (extension) => dispatch => {
     fetch(url)
     .then(r => r.json())
     .then(post => dispatch({
-        type: 'FETCH_POSTS',
+        type: 'FETCH_POST',
         payload: post
     }))
 }

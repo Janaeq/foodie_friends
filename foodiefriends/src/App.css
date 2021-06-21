@@ -217,17 +217,13 @@ textarea {
 	display: table;
 	clear: both;
   }
-  
+
   .grid {
-	float: left;
-	width: 50%;
+	display: flex;
   }
   
-  /* Clear floats after the columns */
-  .grid-img:after {
-	content: "";
-	display: table;
-	clear: both;
+  .grid-img {
+	margin: 15px;
   }
 
 .form-container {

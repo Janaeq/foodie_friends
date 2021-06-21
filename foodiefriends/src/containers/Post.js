@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useReducer } from 'react'
 import { connect } from 'react-redux'
 import { fetchPost } from '../actions/timelineAction'
 import Nav from '../components/Nav'
@@ -16,7 +16,7 @@ class Post extends Component {
             <div>
                 <Nav />
                 <div className='show-post'>
-                    <h1>{post.name} </h1><p>by </p>
+                    <h1>{post.name} </h1><p>by {post.user.username}</p>
                     <div className='container'>
                         <div className='row'>
                             <div className='column'>
@@ -35,7 +35,7 @@ class Post extends Component {
 
 const mapStateToProps = state => {
     return {
-        post: state.posts.items
+        post: state.posts.item
     }
 }
 

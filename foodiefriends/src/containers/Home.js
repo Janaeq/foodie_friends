@@ -4,7 +4,6 @@ import TimelinePosts from '../components/TimelinePosts'
 class Home extends Component {
 
     render() {
-        console.log(this.props)
         return (
             <div>
                 <Nav />
