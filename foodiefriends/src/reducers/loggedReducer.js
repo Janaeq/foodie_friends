@@ -5,6 +5,8 @@ const loggedReducer = (state = { currentUser: [] }, action) => {
       return { ...state, currentUser: action.payload }
     case 'LOGGING_USER':
       return { ...state }
+    case 'LOGOUT_USER':
+      return { ...state, currentUser: [] }
     default:
       return state
   }

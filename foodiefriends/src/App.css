@@ -19,6 +19,10 @@ nav{
   list-style: none;
 }
 
+.nav-link:hover{
+	text-decoration: underline;
+}
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 * {
@@ -34,6 +38,11 @@ nav{
 	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
 	margin: -20px 0 50px;
+}
+
+.post-img:hover{
+	filter: brightness(50%);
+	transition: 0.5s;
 }
 
 .show-post {

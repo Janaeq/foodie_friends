@@ -10,7 +10,6 @@ class ProfileHeader extends Component {
         }
     }
     render() {
-        console.log(this.props)
         const user = this.props.user
         return (
             <div className='header'>

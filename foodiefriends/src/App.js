@@ -11,9 +11,10 @@ import Home from './containers/Home'
 import Profile from './containers/Profile'
 import NewPost from './components/NewPost';
 import Post from './containers/Post'
+import Nav from './components/Nav';
 
 // ACTIONS
-import { signupAction, loginAction, autologin } from './actions/loggedAction'
+import { signupAction, loginAction, autologin, logout } from './actions/loggedAction'
 
 class App extends Component {
   componentDidMount = () => {
@@ -28,11 +29,20 @@ class App extends Component {
     this.props.signupAction(user)
   }
 
+  handleLogout= () => {
+    localStorage.removeItem('token')
+    this.props.logout()
+  }
+
   render() {
     const user = this.props.user
     const token = localStorage.token
+    const isLoggedIn = token ? true : false
     return (
       <div>
+        <Switch>
+        <Nav isLoggedIn={isLoggedIn} handleLogout={this.handleLogout} />
+        </Switch>
         <Switch>
           <Route 
             exact path='/' 
@@ -70,7 +80,7 @@ class App extends Component {
               !user || !token ? (
                 <Redirect to='/' />
               ) : (
-                <Home handleLogout={this.handleLogout} />
+                <Home />
               )
             }
           />
@@ -80,7 +90,7 @@ class App extends Component {
               !user || !token ? (
                 <Redirect to='/' />
               ) : (
-                <Profile user={user} handleLogout={this.handleLogout} />
+                <Profile user={user} />
               )
             }
           />
@@ -118,5 +128,6 @@ const mapStateToProps = state => ({
 export default withRouter(connect(mapStateToProps, {
   signupAction,
   loginAction,
-  autologin
+  autologin,
+  logout
 })(App))

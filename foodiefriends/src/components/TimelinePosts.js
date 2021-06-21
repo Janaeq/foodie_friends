@@ -10,12 +10,14 @@ class TimelinePosts extends Component {
 
     render() {
         if (this.props.loading === true) {
-            return <h1>Loading...</h1>
+            return (
+                <h1>Loading...</h1>
+            )
         } else {
             const postItems = this.props.posts.map(post => (
                 <div key={post.id} className='timeline-posts'>
                     <Link to={{pathname: `/posts/${post.id}`}}>
-                    <img 
+                    <img onClick={this.onClick} className='post-img'
                         src={post.img} 
                         style={{
                             height: "514px",
@@ -42,7 +44,7 @@ const mapStateToProps = state => {
     return {
         posts: state.posts.items,
         newPost: state.posts.newItem,
-        loading: state.posts.loading
+        loading: state.loading
     }
 }
 

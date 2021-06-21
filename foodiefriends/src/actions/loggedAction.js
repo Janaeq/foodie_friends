@@ -70,6 +70,11 @@ export const autologin = () => {
   }
 }
 
+export const logout = () => {
+  return dispatch => {
+    dispatch({ type: 'LOGOUT_USER' })
+  }
+}
 
 // adds fetched user to the state - currentUser: {id, username}
 export const LOGIN_USER = user => ({
