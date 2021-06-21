@@ -10,8 +10,15 @@ class Post extends Component {
     }
 
     render() {
+        if (this.props.loading === true) {
+            return (
+                <div>
+                    <Nav />
+                    <h1>Loading...</h1>
+                </div>
+            )
+        }
         const post = this.props.post
-        console.log(post) //post is an object
         return(
             <div>
                 <Nav />
@@ -35,7 +42,8 @@ class Post extends Component {
 
 const mapStateToProps = state => {
     return {
-        post: state.posts.item
+        post: state.posts.item,
+        loading: state.posts.loading
     }
 }
 
