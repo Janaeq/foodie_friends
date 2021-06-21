@@ -11,7 +11,7 @@ class Api::V1::PostsController < ApplicationController
         if post.save
             render json: { pin: PostSerializer.new(post) }, status: :created
         else
-            render json: { error: "Failed to create post." }, status: :not_acceptable
+            render json: { error: "Failed to create post. Please try again." }, status: :not_acceptable
         end
     end
 
