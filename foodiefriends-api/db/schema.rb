@@ -10,17 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_19_171948) do
+ActiveRecord::Schema.define(version: 2021_06_21_053829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "directions", force: :cascade do |t|
+    t.bigint "post_id"
+    t.string "direction"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_directions_on_post_id"
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string "measurement"
+    t.bigint "post_id"
+    t.string "ingredient"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_ingredients_on_post_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.bigint "user_id"
     t.string "img"
     t.string "name"
-    t.text "directions"
-    t.string "ingredients"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
