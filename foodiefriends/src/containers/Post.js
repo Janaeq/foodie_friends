@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { connect } from 'react-redux'
 import { fetchPost } from '../actions/timelineAction'
 import { loadingData, displayData } from '../actions/loadingAction'
@@ -7,6 +9,20 @@ import IngredientDirectionToggler from '../components/IngredientDirectionToggler
 class Post extends Component {
     componentDidMount() {
         this.props.fetchPost(this.props.match.url)
+    }
+
+    deletePostBtn() {
+        if (this.props.user.username === this.props.post.user.username) {
+                return (
+                    <div className='delete-post-btn'>
+                        <FontAwesomeIcon icon={faTrash} />
+                    </div>
+                )
+        }
+    }
+
+    deletePost() {
+        console.log('deleting')
     }
 
     render() {
@@ -22,7 +38,11 @@ class Post extends Component {
             return(
                 <div>
                     <div className='show-post'>
-                        <h1>{post.name} </h1><p>by </p>
+                        <div className='post-header'>
+                            <div className='post-name'><h1>{post.name} </h1></div>
+                            <div className='post-delete-btn' onClick={this.deletePost}>{this.deletePostBtn()}</div>
+                            <div className='post-user'><p> by {post.user.username}</p></div>
+                        </div>
                         <div className='container'>
                             <div className='row'>
                                 <div className='column'>

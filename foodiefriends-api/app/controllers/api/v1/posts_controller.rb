@@ -26,6 +26,7 @@ class Api::V1::PostsController < ApplicationController
 
     def destroy
         post = Post.find_by(id: params[:id])
+        byebug
         post.delete
         render json: { message: 'Successfully Deleted' }
     end

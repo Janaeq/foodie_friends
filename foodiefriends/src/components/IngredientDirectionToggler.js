@@ -18,7 +18,6 @@ class IngredientDirectionToggler extends Component {
     }
 
     render() {
-        const post = this.props.post
         return (
             <div className='ingredient-direction-toggler'>
                 <div className='toggler-btn'>

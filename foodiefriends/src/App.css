@@ -151,6 +151,19 @@ form {
   padding-bottom: 10px;
 }
 
+.post-name{
+	display: inline-block;
+}
+
+.post-delete-btn{
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.post-delete-btn:hover{
+	color: #fb8570;
+}
+
 .secondary-card {
   background-color: #FFFFFF;
 	display: flex;
