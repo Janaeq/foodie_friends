@@ -6,18 +6,19 @@ Users can log in, sign up, view recipe posts by other users, and create new reci
 
 
 ## How It Works
-Fork and clone this repo, along with the application's [backend API](https://github.com/Janaeq/tiktok-organizer-api.git).
+Fork and clone this repository and run both the backend and frontend.
 
 ### Backend
 Run the following code in your terminal to set up the API and start your server.
 ```ruby
-bundle install
+cd foodiefriends-api
 rails db:migrate
 rails s
 ```
 
 ### Frontend
-In your terminal, run ``` npm start ``` to open the application.
+open a new terminal and cd into the foodiefriends directory. Run ``` npm i && npm start ``` to open the application.
+
 Upon sign up, you are directed to the home page where you can view other recipe posts, view your profile, and create a new recipe post. 
 
 ## Contributing
