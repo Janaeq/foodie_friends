@@ -14,7 +14,8 @@ class TimelinePosts extends Component {
                 <h1>Loading...</h1>
             )
         } else {
-            const postItems = this.props.posts.map(post => (
+            console.log(this.props.posts)
+            const postItems = this.props.posts.reverse().map(post => (
                 <div key={post.id} className='timeline-posts'>
                     <Link to={{pathname: `/posts/${post.id}`}}>
                     <img onClick={this.onClick} className='post-img'
