@@ -4,6 +4,6 @@ class Api::V1::IngredientsController < ApplicationController
     skip_before_action :authorized
 
     def create 
-        ingredient = post
+        # ingredient = post
     end
 end
