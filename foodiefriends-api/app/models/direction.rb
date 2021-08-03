@@ -2,5 +2,5 @@
 
 class Direction < ApplicationRecord
     belongs_to :post
-    validates :direction
+    validates :direction, presence: true
 end
