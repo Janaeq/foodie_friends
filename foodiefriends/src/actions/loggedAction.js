@@ -16,6 +16,8 @@ export const signupAction = user => {
         alert(signupData.error)
       } else {
         localStorage.setItem('token', signupData.jwt)
+        localStorage.setItem('user', signupData.user.username)
+        localStorage.setItem('userId', signupData.user.id)
         dispatch(LOGIN_USER(signupData.user))
       }
     })
@@ -39,6 +41,8 @@ export const loginAction = user => {
         alert(loginData.error)
       } else {
         localStorage.setItem('token', loginData.jwt)
+        localStorage.setItem('user', loginData.user.username)
+        localStorage.setItem('userId', loginData.user.id)
         dispatch(LOGIN_USER(loginData.user)) //loginData.user is a hash containing id and username
       }
     })
