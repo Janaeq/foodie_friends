@@ -35,13 +35,14 @@ class Post extends Component {
             )
         } else {
             const post = this.props.post
+            const user = post.user
             return(
                 <div>
                     <div className='show-post'>
                         <div className='post-header'>
                             <div className='post-name'><h1>{post.name} </h1></div>
                             <div className='post-delete-btn' onClick={this.deletePost}>{this.deletePostBtn()}</div>
-                            <div className='post-user'><p> by {post.user.username}</p></div>
+                            <div className='post-user'><p> by {user.username}</p></div>
                         </div>
                         <div className='container'>
                             <div className='row'>
