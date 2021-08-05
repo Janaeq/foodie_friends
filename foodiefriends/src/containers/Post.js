@@ -11,19 +11,19 @@ class Post extends Component {
         this.props.fetchPost(this.props.match.url)
     }
 
-    deletePostBtn() {
-        if (this.props.user.username === this.props.post.user.username) {
-                return (
-                    <div className='delete-post-btn'>
-                        <FontAwesomeIcon icon={faTrash} />
-                    </div>
-                )
-        }
-    }
+    // deletePostBtn() {
+    //     if (this.props.user.username === this.props.post.user.username) {
+    //             return (
+    //                 <div className='delete-post-btn'>
+    //                     <FontAwesomeIcon icon={faTrash} />
+    //                 </div>
+    //             )
+    //     }
+    // }
 
-    deletePost() {
-        console.log('deleting')
-    }
+    // deletePost() {
+    //     console.log('deleting')
+    // }
 
     render() {
         if (this.props.loading === true) {
@@ -41,8 +41,8 @@ class Post extends Component {
                     <div className='show-post'>
                         <div className='post-header'>
                             <div className='post-name'><h1>{post.name} </h1></div>
-                            <div className='post-delete-btn' onClick={this.deletePost}>{this.deletePostBtn()}</div>
-                            <div className='post-user'><p> by {user.username}</p></div>
+                            {/* <div className='post-delete-btn' onClick={this.deletePost}>{this.deletePostBtn()}</div> */}
+                            {/* <div className='post-user'><p> by {user.username}</p></div> */}
                         </div>
                         <div className='container'>
                             <div className='row'>
