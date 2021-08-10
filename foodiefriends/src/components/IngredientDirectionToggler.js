@@ -11,9 +11,9 @@ class IngredientDirectionToggler extends Component {
 
     renderContent = () => {
         if (this.props.directions === true) {
-            return <Directions post={this.props.post} />
+            return <Directions directions={this.props.post.directions} />
         } else if (this.props.ingredients === true) {
-            return <Ingredients post={this.props.post} />
+            return <Ingredients ingredients={this.props.post.ingredients} />
         } 
     }
 
