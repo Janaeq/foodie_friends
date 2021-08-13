@@ -12,6 +12,7 @@ class NewPost extends Component {
     }
 
     onSubmit = e => {
+        // onSubmit make sure all input fields do not change 
         e.preventDefault()
         this.props.createPost(this.state, this.props.history)
     }
@@ -20,6 +21,12 @@ class NewPost extends Component {
         this.setState({
             [e.target.name]: e.target.value
         })
+    }
+
+    addInput = e => {
+        // onClick add another input field 
+        debugger
+        console.log(e.target)
     }
 
     render() {
@@ -35,9 +42,13 @@ class NewPost extends Component {
                         <label>Name: </label>
                         <input type='text' name='name' onChange={this.onChange} value={this.state.name} /><br/>
                         <label>Directions: </label>
-                        <textarea name='directions' onChange={this.onChange} value={this.state.directions} /><br/>
+                        <input type='text' name='directions' onChange={this.onChange} value={this.state.directions} />
+                        <button type='button' className='add-input' name='addDirection' onClick={this.addInput} value={this.state.add}>+</button>
+                        <br/>
                         <label>Ingredients: </label>
-                        <textarea name='ingredients' onChange={this.onChange} value={this.state.ingredients} /><br/>
+                        <input name='ingredients' onChange={this.onChange} value={this.state.ingredients} />
+                        <button type='button' className='add-input' name='addIngredient' onClick={this.addInput} value={this.state.add}>+</button>
+                        <br/>
                         <button type='submit'>Post!</button>
                         <br/>
                     </form>

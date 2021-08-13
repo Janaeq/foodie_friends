@@ -8,7 +8,7 @@ export const fetchPosts = () => dispatch => {
 }
 
 export const createPost = (postData, history) => dispatch => {
-    console.log(postData)
+    console.log(postData) //see how the directions work out
     const token = localStorage.token
     fetch('http://localhost:3000/api/v1/posts', {
         method: 'POST',
