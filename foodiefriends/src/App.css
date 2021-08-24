@@ -111,11 +111,11 @@ button {
 }
 
 .login-btn {
-  margin-left: 40%;
+  margin-left: 38%;
 }
 
 .sign-up-link {
-  margin-left: 32%;
+  margin-left: 32%; /* center sign up link*/
 }
 
 button:active {
@@ -223,7 +223,6 @@ textarea {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding: 50px;
 	height: 100%;
 	text-align: center;
 }
@@ -242,6 +241,7 @@ textarea {
 
   .grid {
 	display: flex;
+	padding: 2.5%;
   }
   
   .grid-img {
