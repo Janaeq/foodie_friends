@@ -3,6 +3,7 @@ import TimelinePosts from '../components/TimelinePosts'
 class Home extends Component {
 
     render() {
+        // no props
         return (
             <div>
                 <TimelinePosts />
