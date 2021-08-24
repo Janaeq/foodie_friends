@@ -5,16 +5,19 @@ import { Link } from 'react-router-dom'
 
 class TimelinePosts extends Component {
     componentDidMount() {
+        // what is componentDidMount? What does it do?
+        // Review Lifecycle methods
         this.props.fetchPosts()
     }
 
     render() {
+        // props: {posts: Array(0), newPost: {…}, loading: {…}, fetchPosts: ƒ}
+        // props come from state in timelineAction/postReducer
         if (this.props.loading === true) {
             return (
                 <h1>Loading...</h1>
             )
         } else {
-            console.log(this.props.posts)
             const postItems = this.props.posts.reverse().map(post => (
                 <div key={post.id} className='timeline-posts'>
                     <Link to={{pathname: `/posts/${post.id}`}}>
