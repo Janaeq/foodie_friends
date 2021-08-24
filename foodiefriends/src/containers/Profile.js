@@ -1,20 +1,27 @@
 import React, {Component} from 'react'
-import Nav from '../components/Nav'
+import { connect } from 'react-redux'
 import ProfileHeader from '../components/ProfileHeader'
 import UserPosts from '../components/UserPosts'
 
 class Profile extends Component {
-
+// IMPLEMENT LOADING FOR PROFILE
     render() {
-        const user = this.props.user
+        // props: {user => id, posts, username}, loading: {}
+        console.log(this.props)
         return (
             <div>
-                <Nav />
-                <ProfileHeader user={user}/>
-                <UserPosts user={user}/>
+            {/* remove nav */}
+                <ProfileHeader user={this.props.user}/>
+                <UserPosts user={this.props.user}/>
             </div>
         )
     }
 }
 
-export default Profile
+const mapStateToProps = state => {
+    return {
+        loading: state.loading
+    }
+}
+
+export default connect(mapStateToProps)(Profile)
