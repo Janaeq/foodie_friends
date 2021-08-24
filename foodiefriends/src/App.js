@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
+// find difference between components and containers, and refactor accordingly. !!!!!
 
 // COMPONENTS
 import LandingPage from './components/Landingpage'
@@ -40,7 +41,7 @@ class App extends Component {
     const isLoggedIn = token ? true : false
     return (
       <div>
-        <Switch>
+        <Switch> {/* What does Switch do? check in React docs */}
         <Nav isLoggedIn={isLoggedIn} handleLogout={this.handleLogout} />
         </Switch>
         <Switch>
@@ -131,3 +132,24 @@ export default withRouter(connect(mapStateToProps, {
   autologin,
   logout
 })(App))
+
+// Clean up code once complete
+
+// CHANGES TO MAKE 
+
+// Make the title of objects included in the same container
+// change the form to be dynamic for inputs
+// edit profile to be more user friendly
+    // create edit option
+    // condense photo grid
+    // add profile picture
+    // add friends
+    // bio
+// add home button for login and signup pages
+// add query feature
+    // query for other users
+    // query for posts
+        // find posts that include term(s) in post name, or ingredients
+        // query for each term separately
+            // if user puts in "garlic pasta", split(' ') and query two terms separately
+// fix reducer for ingredients/post to clear when user clicks off single post
