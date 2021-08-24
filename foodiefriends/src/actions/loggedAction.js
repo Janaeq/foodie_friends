@@ -40,6 +40,7 @@ export const loginAction = user => {
       if (loginData.error) {
         alert(loginData.error)
       } else {
+        // is this safe to use in local storage? is it necessary?
         localStorage.setItem('token', loginData.jwt)
         localStorage.setItem('user', loginData.user.username)
         localStorage.setItem('userId', loginData.user.id)
