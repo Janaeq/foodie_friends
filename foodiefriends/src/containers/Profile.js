@@ -7,10 +7,8 @@ class Profile extends Component {
 // IMPLEMENT LOADING FOR PROFILE
     render() {
         // props: {user => id, posts, username}, loading: {}
-        console.log(this.props)
         return (
             <div>
-            {/* remove nav */}
                 <ProfileHeader user={this.props.user}/>
                 <UserPosts user={this.props.user}/>
             </div>
