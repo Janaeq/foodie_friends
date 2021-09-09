@@ -4,7 +4,7 @@ class Ingredients extends Component {
     render() {
         const ingredientsList = this.props.ingredients.map(ingr => (
             <div key={ingr.id} className='ingredient'>
-                <li>{ingr.measurement} {ingr.ingredient}</li>
+                <li>{ingr.ingredient}</li>
                 <br></br>
             </div>
     ))
